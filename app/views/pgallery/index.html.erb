@@ -28,13 +28,10 @@
     <div style="margin-top: 5px;">
       <div class="itemx">
         <div class="hovereffect">
-        <%=image_tag("profesor.jpg", height: '230', width: '200')%>
+        <img align="center" src="<%= @profesor.image %>" width="140" height="140">
           <div class="overlay">
             <% link = '/pgallery/' + user.id.to_s %>
             <h2> <%= link_to full_name ,link%></h2>
-            <p>
-              <a href="#">10%</a>
-            </p>
           </div>
         </div>
       </div>
