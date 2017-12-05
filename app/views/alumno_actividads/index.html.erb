@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alumno Actividads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Alumno</th>
+      <th>Actividadinstructor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alumno_actividads.each do |alumno_actividad| %>
+      <tr>
+        <td><%= alumno_actividad.alumno %></td>
+        <td><%= alumno_actividad.actividadinstructor %></td>
+        <td><%= link_to 'Show', alumno_actividad %></td>
+        <td><%= link_to 'Edit', edit_alumno_actividad_path(alumno_actividad) %></td>
+        <td><%= link_to 'Destroy', alumno_actividad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alumno Actividad', new_alumno_actividad_path %>

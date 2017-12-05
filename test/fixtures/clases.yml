@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clave: MyString
+  materium: one
+  profesor: one
+  indice: 1
+  horario: MyText
+
+two:
+  clave: MyString
+  materium: two
+  profesor: two
+  indice: 1
+  horario: MyText

@@ -1,0 +1,73 @@
+<html>
+<body>
+
+
+ 
+ <div class="grid-block" style="background-image: url('https://png.pngtree.com/thumb_back/fw800/back_pic/00/01/38/1156014b2176aaa.jpg'); width: 100%; height: 50vh; "> </div>
+<%if alumno_signed_in? or profesor_signed_in?%>
+<%else%>
+<a><%= link_to "Inicia como alumno", new_alumno_session_path, class:'boton azul'%></a>
+  <a><%= link_to "Inicia como profesor", new_profesor_session_path, class:'boton rojo'%></a>
+<%end%>
+ 
+</body>
+
+<style type="text/css">
+	
+	.boton{
+            text-align:center;
+            text-decoration: none;
+      font-family: 'Helvetica Neue', Helvetica, sans-serif;
+      display:inline-block;
+            color: #FFF;
+            background: #7F8C8D;
+            padding: 15px 40px;
+            white-space: nowrap;
+            margin: 10px 5px;
+            -webkit-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+}
+      
+.azul{
+  background: #3498DB;
+  box-shadow: 0px 5px 0px 0px #2980B9;
+}
+
+.azul:hover{
+  background: #39a0e5;
+}
+
+.azul:active{
+  box-shadow: 0px 2px 0px 0px #2980B9;
+}
+
+.verde{
+  background: #2ECC71;
+  box-shadow: 0px 5px 0px 0px #27AE60;
+}
+
+.verde:hover{
+  background: #32db78;
+}
+
+.verde:active{
+  box-shadow: 0px 2px 0px 0px #27AE60;
+}
+
+.rojo{
+  background: #E74C3C;
+  box-shadow: 0px 5px 0px 0px #C0392B;
+}
+
+.rojo:hover{
+  background: #ff5242;
+}
+
+.rojo:active{
+  box-shadow: 0px 2px 0px 0px #C0392B;
+}
+</style>
+</html>

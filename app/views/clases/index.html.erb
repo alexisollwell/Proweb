@@ -1,0 +1,39 @@
+
+<p id="notice"><%= notice %></p>
+
+<div class="titulo">
+  CLASES
+</div>
+
+ <div id="results" class="container" style="left: 90px; width: 250px">
+   <div class="row" border-radius="55px" style="padding-bottom: 15px">
+<div class="contenedor">
+    <% @clases.each do |clase| %>
+        <% @materia_actual = Materium.find_by(id: clase.materium)%>
+        <% @profesor_actual = Profesor.find_by(id: clase.profesor)%>
+
+       <div class="itemx">
+              <% if clase.indice.to_i > 50%>
+                <%filtro = "hovereffect" %>
+              <% else%>
+                <%filtro = "hovereffect4" %>
+              <% end%>
+              <div class="<%= filtro%>">
+                  <%=image_tag("materia.png", height: '230', width: '200')%>
+                <div class="overlay">
+                     <h2> <%= link_to @materia_actual.nombre, clase %> <%= clase.horario %></h2>
+                    <p>
+                      <a href="#"><%= clase.indice %></a>
+                    </p>
+                </div>
+              </div>
+            </div>
+
+    <% end %>
+  </div>
+    <br>
+
+    <%= link_to 'New Clase', new_clase_path %>
+
+     </div>
+            </div>

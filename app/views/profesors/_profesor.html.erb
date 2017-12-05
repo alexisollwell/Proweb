@@ -1,0 +1,15 @@
+<% full_name = profesor.nombre.to_s + ' '+ profesor.ap_pat.to_s + ' '+ profesor.ap_mat.to_s%>
+ <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 15px;">
+              <div class="hovereffect">
+                  <%=image_tag("profesor.jpg", height: '200', width: '200')%>
+                <div class="overlay">
+                		<% link = '/pgallery/' + profesor.id.to_s %>
+                     <h2> <%= link_to full_name ,link%></h2>
+
+                    <p>
+                      <a href="#">10%</a>
+                    </p>
+                </div>
+              </div>
+            </div>
+            

@@ -1,0 +1,42 @@
+<%= form_with(model: clase, local: true) do |form| %>
+  <% if clase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clase.errors.count, "error") %> prohibited this clase from being saved:</h2>
+
+      <ul>
+      <% clase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :clave %>
+    <%= form.text_field :clave, id: :clase_clave %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materium_id %>
+    <%= form.text_field :materium_id, id: :clase_materium_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :profesor_id %>
+    <%= form.text_field :profesor_id, id: :clase_profesor_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :indice %>
+    <%= form.number_field :indice, id: :clase_indice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horario %>
+    <%= form.text_area :horario, id: :clase_horario %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

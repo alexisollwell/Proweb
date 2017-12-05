@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  actividadExtra: one
+  instructor: one
+  horario: MyString
+  lugar: MyString
+
+two:
+  actividadExtra: two
+  instructor: two
+  horario: MyString
+  lugar: MyString

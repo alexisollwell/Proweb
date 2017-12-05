@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<% @materia_actual = Materium.find_by(id: @clase.materium)%>
+<% @profesor_actual = Profesor.find_by(id: @clase.profesor)%>
+
+<center>
+<div class="info_clase_alumnos">
+
+  <p>
+    <strong>Profesor:</strong><br>
+    <%= @profesor_actual.titulo%>. <%= @profesor_actual.nombre%> <%= @profesor_actual.ap_pat%> <%= @profesor_actual.ap_mat%>
+  </p>
+
+  <p>
+    <strong>Materia:</strong><br>
+    <%= @materia_actual.nombre %>
+  </p>
+
+  <p>
+    <strong>Horario:</strong><br>
+    <%= @clase.horario %>
+  </p>
+</div>
+  </center>
+<br><br>
+
+<center>
+  <% param = @clase.id%>
+  <strong><%= link_to 'Deja tu comentario!', new_clase_alumno_path(:clase_comment => param) %></strong>
+
+  <% p = ClaseAlumno.where(clase_id: @clase.id)%>
+
+  <% p.each do |comment|%>
+      <div class="bueno">
+        <h1><%= comment.comentario%></h1>
+      </div>
+<!--
+    <%al = Alumno.find_by(id: comment.alumno_id)%>
+  	<h1><%= al.nombre%></h1>
+-->
+  <%end%>
+</center>

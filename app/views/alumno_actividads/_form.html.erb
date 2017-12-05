@@ -1,0 +1,27 @@
+<%= form_with(model: alumno_actividad, local: true) do |form| %>
+  <% if alumno_actividad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(alumno_actividad.errors.count, "error") %> prohibited this alumno_actividad from being saved:</h2>
+
+      <ul>
+      <% alumno_actividad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :alumno_id %>
+    <%= form.text_field :alumno_id, id: :alumno_actividad_alumno_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actividadinstructor_id %>
+    <%= form.text_field :actividadinstructor_id, id: :alumno_actividad_actividadinstructor_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

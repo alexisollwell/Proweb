@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Actividadextra:</strong>
+  <%= @actividad_instructor.actividadExtra %>
+</p>
+
+<p>
+  <strong>Instructor:</strong>
+  <%= @actividad_instructor.instructor %>
+</p>
+
+<p>
+  <strong>Horario:</strong>
+  <%= @actividad_instructor.horario %>
+</p>
+
+<p>
+  <strong>Lugar:</strong>
+  <%= @actividad_instructor.lugar %>
+</p>
+
+<%= link_to 'Edit', edit_actividad_instructor_path(@actividad_instructor) %> |
+<%= link_to 'Back', actividad_instructors_path %>

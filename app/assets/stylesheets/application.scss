@@ -1,0 +1,487 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+/*INICIO INFORMACION*/
+  .datos {
+      width: 30%;
+      float: left;
+      padding: 1px;
+      margin: 25px;
+      align-self: center;
+      font-size: 150%;
+  }
+
+  .imagen {
+      width: 25%;
+      float: left;
+      padding: 1px;
+      margin: 25px;
+      align-self: center;
+  }
+
+  .profesor{
+    width: 25%;
+    float: left;
+    padding: 1px;
+    margin: 25px;
+    align-self: center;
+  }
+/*FIN INFORMACION*/
+
+/*INICIO PRINCIPALES*/
+.materias_impartidas{
+  border-radius: 10px;
+  padding: 20px;
+  margin: 25px;
+}
+/*FIN PRINCIPALES*/
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: 250px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #000;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: 0;
+  }
+  #wrapper.toggled {
+    padding-left: 250px;
+  }
+  #sidebar-wrapper {
+    width: 0;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+  }
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
+
+ //slide bar
+ #wrapper {
+   padding-left: 0;
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+ }
+
+ #wrapper.toggled {
+   padding-left: 250px;
+ }
+
+ #sidebar-wrapper {
+   z-index: 1000;
+   position: fixed;
+   left: 250px;
+   width: 0;
+   height: 100%;
+   margin-left: -250px;
+   overflow-y: auto;
+   background: #000;
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+ }
+
+ #wrapper.toggled #sidebar-wrapper {
+   width: 250px;
+ }
+
+ #page-content-wrapper {
+   width: 100%;
+   position: absolute;
+   padding: 15px;
+ }
+
+ #wrapper.toggled #page-content-wrapper {
+   position: absolute;
+   margin-right: -250px;
+ }
+
+
+ /* Sidebar Styles */
+
+ .sidebar-nav {
+   position: absolute;
+   top: 0;
+   width: 250px;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+ }
+
+ .sidebar-nav li {
+   text-indent: 20px;
+   line-height: 40px;
+ }
+
+ .sidebar-nav li a {
+   display: block;
+   text-decoration: none;
+   color: #999999;
+ }
+
+ .sidebar-nav li a:hover {
+   text-decoration: none;
+   color: #fff;
+   background: rgba(255, 255, 255, 0.2);
+ }
+
+ .sidebar-nav li a:active, .sidebar-nav li a:focus {
+   text-decoration: none;
+ }
+
+ .sidebar-nav>.sidebar-brand {
+   height: 65px;
+   font-size: 18px;
+   line-height: 60px;
+ }
+
+ .sidebar-nav>.sidebar-brand a {
+   color: #999999;
+ }
+
+ .sidebar-nav>.sidebar-brand a:hover {
+   color: #fff;
+   background: none;
+ }
+
+ @media(min-width:768px) {
+   #wrapper {
+     padding-left: 0;
+   }
+   #wrapper.toggled {
+     padding-left: 250px;
+   }
+   #sidebar-wrapper {
+     width: 0;
+   }
+   #wrapper.toggled #sidebar-wrapper {
+     width: 250px;
+   }
+   #page-content-wrapper {
+     padding: 20px;
+     position: relative;
+   }
+   #wrapper.toggled #page-content-wrapper {
+     position: relative;
+     margin-right: 0;
+   }
+ }
+
+ /**/
+
+ *{
+   box-sizing: border-box;
+ }
+
+ /*INICIO HEADER*/
+ header{
+   background-color: seagreen;
+   display: flex;
+   color: white;
+   height: 80px;
+
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0;
+   padding: 5px;
+
+   z-index: 1000;
+
+   border-bottom: 5px solid black;
+ }
+
+ .icono{
+   align-self: center;
+   padding: 20px;
+ }
+
+ .nombre{
+   align-self: center;
+   position: absolute;
+   right: 0px;
+   width: 300px;
+ }
+ /*FIN HEADER*/
+
+ /*INICIO MENU*/
+ #sidebar-wrapper {
+   position: fixed;
+   top: 80px;
+ }
+ /*FIN MENU*/
+
+ /*INICIO EXTRAS*/
+ .titulo{
+   font-size: 30px;
+   font-weight: bolder;
+   background-color: mediumseagreen;
+   text-align: center;
+   border: 2px solid black;
+   border-radius: 5px;
+   padding: 15px;
+ }
+ /*FIN EXTRAS*/
+
+ /*INICIO BUSCADOR*/
+ .buscador{
+   font-size: 30px;
+   font-weight: bolder;
+   text-align: center;
+ }
+ /*FIN BUSCADOR*/
+
+ .item{
+   border: 3px solid black;
+   padding: 10px;
+   width: 250px;
+   height: 250px;
+ }
+
+ /**/
+ /*INICIO PRINCIPALES*/
+  .informacion{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 25px;
+  }
+
+  .ajuste{
+    display: flex;
+  }
+
+  .archivos{
+    border-radius: 10px;
+    padding: 20px;
+    margin: 25px;
+  }
+
+  .comentarios{
+    border-radius: 10px;
+    padding: 20px;
+    margin: 25px;
+  }
+
+  .catalogo{
+    border-radius: 10px;
+    padding: 20px;
+    margin: 25px;
+  }
+
+  .contenedor{
+    border: 1px /*solid black*/;
+    align-items: stretch;
+    margin-left: 565px;
+  }
+
+  .itemx{
+    border: 2px /*solid black*/;
+    padding: 10px;
+    width: 220px;
+    height: 250px;
+  }
+/*FIN PRINCIPALES*/
+
+  .info_clase_alumnos{
+    border: 1px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 180px;
+    background-color: mediumseagreen;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+  }
+  /*INICIO COMENTARIOS*/
+    .bueno{
+      background-color: lightgreen;
+      border-radius: 5px;
+      border: 2px solid black;
+      padding: 10px;
+      margin: 8px;
+    }
+
+    .regular{
+      background-color: lightyellow;
+      border-radius: 5px;
+      border: 2px solid black;
+      padding: 10px;
+      margin: 8px;
+    }
+
+    .malo{
+      background-color: lightcoral;
+      border-radius: 5px;
+      border: 2px solid black;
+      padding: 10px;
+      margin: 8px;
+    }
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+ td,  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+ tr:nth-child(even){background-color: #f2f2f2;}
+
+ tr:hover {background-color: #ddd;}
+
+ th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+  .login{
+    border: 1px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 290px;
+    background-color: mediumseagreen;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .signup{
+    border: 1px solid black;
+    padding: 10px;
+    width: 300px;
+    height: 760px;
+    background-color: mediumseagreen;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .nuevamateria{
+    border: 1px solid black;
+    padding: 10px;
+    width: 300px;
+    height: 320px;
+    background-color: mediumseagreen;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+
+    .showmateria{
+      border: 1px solid black;
+      padding: 10px;
+      width: 300px;
+      height: 210px;
+      background-color: mediumseagreen;
+      border-top-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }

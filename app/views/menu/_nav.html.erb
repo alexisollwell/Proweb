@@ -1,0 +1,94 @@
+ <header>
+    <%if alumno_signed_in? or profesor_signed_in?%>
+
+      <div class="icono" id="menu-toggle">
+        <%=image_tag("menu.png",:size => "30x30")%>
+      </div>
+<%end%>
+      <div class="nombre">
+        <h1><strong><%= link_to "ClassME", root_path%></strong></h1>
+      </div>
+    </header>
+
+    <!--Menu-->
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                     <%if alumno_signed_in? %>
+
+                        <% p = current_alumno %>
+                            <%= link_to p.nombre,perfil_path%>
+                     <%elsif profesor_signed_in?%>
+                            <% p = current_profesor %>
+                            <%= link_to p.nombre,perfil_path%>
+                     <%else %>
+                        <%= link_to "Perfil",perfil_path%>
+
+                    <%end%>
+
+                </li>
+                <li>
+                <%if alumno_signed_in? %>
+
+                        <%= link_to "Catalogo Maestros", pgallery_index_path%>
+
+                     <%else %>
+
+
+                    <%end%>
+
+
+                </li>
+                <li>
+                    <%if alumno_signed_in? %>
+
+                        <%= link_to "Catalogo Materias", materia_path%>
+
+                    <%end%>
+
+                </li>
+                <!--
+                                <li>
+                                    <%= link_to "Actividades Extracurriculares", root_path%>
+                                </li>
+                -->
+                <li>
+                    <%if alumno_signed_in? %>
+
+                       <%= link_to "Clases", clases_path%>
+
+                     <%end%>
+
+                </li>
+                <br>
+                <br>
+<!--
+                <li>
+                    <%= link_to "Configuracion", root_path%>
+                </li>
+-->
+                <li>
+
+                <%if alumno_signed_in? %>
+
+                                <%= link_to "Salir", destroy_alumno_session_path, :method => :delete %>
+
+                <%end%>
+
+                <%if profesor_signed_in? %>
+                         <%= link_to "Salir Profe", destroy_profesor_session_path,:method => :delete  %>
+                <%end%>
+
+
+                </li>
+            </ul>
+        </div>
+
+    <!--Script-->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>

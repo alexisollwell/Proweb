@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  matricula: MyString
+  Horas: 1
+  nombre: MyString
+  creditos: 1
+  semestre: 1
+
+two:
+  matricula: MyString
+  Horas: 1
+  nombre: MyString
+  creditos: 1
+  semestre: 1

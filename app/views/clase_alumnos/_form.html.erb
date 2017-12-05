@@ -1,0 +1,41 @@
+<%= form_with(model: clase_alumno, local: true) do |form| %>
+
+
+  <% if clase_alumno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clase_alumno.errors.count, "error") %> prohibited this clase_alumno from being saved:</h2>
+
+      <ul>
+      <% clase_alumno.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<% p = current_alumno %>
+  <div class="field">
+    <% form.label :alumno_id %>
+    <%= form.text_field :alumno_id, id: :clase_alumno_alumno_id , :value => p.id, :readonly => true%>
+  </div>
+
+  <div class="field">
+    <% form.label :clase_id %>
+    <%= form.text_field :clase_id, id: :clase_alumno_clase_id , :value => @id_guardar, :readonly => true%>
+  </div>
+
+  <div class="field">
+    <%= form.label :comentario %>
+    <%= form.text_area :comentario, id: :clase_alumno_comentario %>
+  </div>
+
+  <div class="field">
+    <%=form.select :calificacion, options_for_select([["Malo",1],["Regular",2],["Bueno",3]])%><br><br>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

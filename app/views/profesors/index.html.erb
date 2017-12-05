@@ -1,0 +1,25 @@
+<% @users = Profesor.all %>
+ <div id="contenedor" class="container" style="left: 90px; width: 250px">
+   <div class="row" border-radius="55px" style="padding-bottom: 15px">
+<% @users.each do |user| %>
+ 
+ <% full_name = user.nombre.to_s + ' '+ user.ap_pat.to_s + ' '+ user.ap_mat.to_s%>
+
+ <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 15px;">
+              <div class="hovereffect">
+                  <%=image_tag("profesor.jpg", height: '200', width: '200')%>
+                <div class="overlay">
+                     <h2> <%= link_to full_name, user %></h2>
+
+                    <p>
+                      <a href="#">10%</a>
+                    </p>
+                </div>
+              </div>
+            </div>
+            
+            
+
+<% end %>
+</div>
+</div>

@@ -1,0 +1,46 @@
+<br>
+<div class="buscador">
+<%= form_tag search_path, method: :get, remote: true do%>
+  <div class="input-group">
+
+  <%= text_field_tag :keyword, nil, class: "form-control",placeholder: "Escribe aqui para buscar"%>
+    <span class="input-group-btn">
+    <%= content_tag :button, class:"btn btn-secondary", type: :submit do%>
+      Buscar
+      <% end %>
+    </span>
+
+  </div>
+  <% end %>
+</div>
+
+
+<br>
+
+<% @users = Profesor.all %>
+<!--
+<div id="results" class="container" style="left: 90px; width: 250px">
+<div class="row" border-radius="55px" style="padding-bottom: 15px">
+-->
+<div class="contenedor" >
+  <% @users.each do |user| %>
+  <% full_name = user.nombre.to_s + ' '+ user.ap_pat.to_s + ' '+ user.ap_mat.to_s%>
+    <div style="margin-top: 5px;">
+      <div class="itemx">
+        <div class="hovereffect">
+        <%=image_tag("profesor.jpg", height: '230', width: '200')%>
+          <div class="overlay">
+            <% link = '/pgallery/' + user.id.to_s %>
+            <h2> <%= link_to full_name ,link%></h2>
+            <p>
+              <a href="#">10%</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+</div>
+</div>

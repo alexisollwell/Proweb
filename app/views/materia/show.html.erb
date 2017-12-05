@@ -1,0 +1,36 @@
+
+<br>
+<center>
+<div class="showmateria">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Matricula:</strong>
+  <%= @materium.matricula %>
+</p>
+
+<p>
+  <strong>Horas:</strong>
+  <%= @materium.Horas %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @materium.nombre %>
+</p>
+
+<p>
+  <strong>Creditos:</strong>
+  <%= @materium.creditos %>
+</p>
+
+<p>
+  <strong>Semestre:</strong>
+  <%= @materium.semestre %>
+</p>
+
+<%= link_to 'Edit', edit_materium_path(@materium) %> |
+<%= link_to 'Back', materia_path %>
+</div>
+</center>

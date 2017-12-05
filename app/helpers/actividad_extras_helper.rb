@@ -1,0 +1,2 @@
+module ActividadExtrasHelper
+end

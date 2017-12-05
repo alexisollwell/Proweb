@@ -1,0 +1,52 @@
+<%= @profesor.nombre%>
+<div class="informacion">
+
+  <div class="titulo">
+    INFORMACION
+  </div>
+  <center>
+		<div class="ajuste">
+			<div class="profesor">
+				<h2><strong><u>SERRANO ORTEGA MARIA MAGDALENA</u></strong></h2>	<!--Nombre del profesor-->
+			</div>
+      <div class="datos">
+				<center>
+					<dl>
+						<dt><strong>Comentario:</strong></dd><br> <!--Clave-->
+            <dd>Me gusta la pizza</dd><br>
+						<dt>Indice de aprobacion:</dt>
+						<dd>95%</dd> <!--Horario-->
+					</dl>
+				</center>
+			</div>
+      <div class="imagen">
+        <center>
+          <%=image_tag("profesor.jpg", height: '235', width: '190')%>
+        </center>
+      </div>
+		</div>
+  </center>
+</div>
+
+<div class="materias_impartidas">
+  <div class="titulo">
+    MATERIAS
+  </div>
+
+  <br>
+
+  <center>
+    <div class="ajuste">
+      <div class="item">
+        <%=image_tag("profesor.jpg", height: '200', width: '200')%><!--Imagen de la materia-->
+        <p><strong>Lenguajes de Interfaz</strong></p><!--Nombre de la materia-->
+      </div>
+    </div>
+  </center>
+
+  <center>
+
+  </center>
+
+
+</div>

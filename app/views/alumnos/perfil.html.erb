@@ -1,0 +1,99 @@
+                <%if alumno_signed_in? %>
+                     <% p = current_alumno %>
+                <%end%>
+
+                <%if profesor_signed_in? %>
+          		     <% p = current_profesor %>
+                <%end%>
+
+ <div class="informacion">
+
+  <div class="titulo">
+    INFORMACION
+  </div>
+
+  <br>
+  <center>
+		<div class="ajuste">
+			<div class="profesor">
+				<h2><strong><u><%= p.nombre%> <%= p.ap_pat%> <%= p.ap_mat%></u></strong></h2>	<!--Nombre del alumno-->
+			</div>
+
+      <div class="datos">
+				<center>
+					<dl>
+						<dt><strong>e-Mail:</strong></dd><br> <!--Semestre-->
+            <dd><%= p.email%></dd><br>
+            <dt><strong>Control:</strong></dd><br> <!--Semestre-->
+            <dd><%= p.no_control%></dd><br>
+            <dt><strong>Direccion:</strong></dd><br> <!--Semestre-->
+            <dd>Calle <%= p.calle%></dd>
+						<dd>Colonia <%= p.colonia%></dd> <!--Creditos-->
+					</dl>
+				</center>
+			</div
+
+      <div class="imagen">
+        <center>
+           <img align="center" src="<%= p.image %>" width="220" height="260">
+        </center>
+      </div>
+		</div>
+  </center>
+</div>
+
+<div class="materias_impartidas">
+  <div class="titulo">
+    MATERIAS ACTUALES
+  </div>
+
+
+                <%if alumno_signed_in? %>
+                     <!--Aqui busco las clases en base a los comentarios guardados-->
+<% @materias_actuales = ClaseAlumno.where(alumno_id: p.id, cursador: true)%>
+<% @materias_actuales = @materias_actuales.uniq %>
+
+<% pu = []%>
+<% Array(@materias_actuales).each do |po|%>
+ <% pu.push po.clase_id%>
+ <% po.clase_id %>
+<%end%>
+
+<% pu = pu.uniq%>
+<% Array(pu).each do |po|%>
+    <br>
+    <% pc = Clase.find_by(id:po)%>
+    <% materia_name = Materium.find_by(id: pc.materium_id)%>
+    <center>
+    <div class="ajuste">
+      <div class="item">
+        <%=image_tag("profesor.jpg", height: '200', width: '200')%><!--Imagen de la materia-->
+        <p><strong><%= link_to materia_name.nombre, pc%></strong></p><!--Nombre de la materia-->
+      </div>
+    </div>
+  </center>
+   <%end%>
+
+                <%end%>
+
+                <%if profesor_signed_in? %>
+                   <% clase_impartidas = Clase.where(profesor_id: p.id)%>
+<% clase_impartidas.each do |c_i|%>
+    <%nombre_materia = Materium.find_by(id: c_i.materium_id)%>
+    <center>
+    <div class="ajuste">
+      <div class="item">
+        <%=image_tag("profesor.jpg", height: '200', width: '200')%><!--Imagen de la materia-->
+        <p><strong><%= link_to nombre_materia.nombre, c_i%></strong></p><!--Nombre de la materia-->
+      </div>
+    </div>
+  </center>
+<% end%>
+                <%end%>
+
+
+  <br>
+
+
+
+</div>
